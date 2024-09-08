@@ -3,6 +3,6 @@ import controller from "./controller.js";
 
 const router = express.Router();
 
-router.post("/", controller.subdomainly);
+router.post("/subdomainly", controller.subdomainly);
 
 export default router;
