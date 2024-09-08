@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: webhooks
+    container_name: webhook
     build: .
     volumes:
       - .:/app
