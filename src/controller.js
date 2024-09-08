@@ -19,6 +19,4 @@ const subdomainly = (req, res) => {
     );
 };
 
-export default {
-    subdomainly,
-};
+export default { subdomainly }
