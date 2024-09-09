@@ -6,7 +6,7 @@ const subdomainly = (req, res) => {
 
     // Menjalankan perintah git pull dan docker-compose
     exec(
-        "cd /home/dean/Projects/subdomainly && git pull && docker compose down && docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d",
+        "cd /home/dean/Projects/subdomainly && git pull && docker compose down && docker compose build && docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d",
         (error, stdout, stderr) => {
             if (error) {
                 console.error(`exec error: ${error}`);
@@ -21,4 +21,4 @@ const subdomainly = (req, res) => {
     );
 };
 
-export default { subdomainly }
+export default { subdomainly };
