@@ -6,14 +6,16 @@ const subdomainly = (req, res) => {
 
     // Menjalankan perintah git pull dan docker-compose
     exec(
-        "cd /home/dean/Projects/subdomainly && git pull && docker compose down && docker compose up -d",
+        "cd /home/dean/Projects/subdomainly && git pull && docker compose down && docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d",
         (error, stdout, stderr) => {
             if (error) {
-                console.error(`Error executing command: ${error}`);
-                return res.status(500).send("Error occurred");
+                console.error(`exec error: ${error}`);
+                return res.status(500).send("Pull and deploy failed");
             }
+
             console.log(`stdout: ${stdout}`);
             console.error(`stderr: ${stderr}`);
+
             res.status(200).send("Pull and deploy successful");
         }
     );
