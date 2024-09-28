@@ -9,6 +9,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("<h1>Hallo Webhook</h1>")
 })
+
 app.use("/", router);
 
 app.listen(PORT, () => {
