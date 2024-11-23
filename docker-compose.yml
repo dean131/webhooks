@@ -1,5 +1,5 @@
 services:
-  web:
+  webhook:
     container_name: webhook
     build: .
     volumes:
