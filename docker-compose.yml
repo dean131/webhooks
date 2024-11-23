@@ -4,10 +4,9 @@ services:
     build: .
     volumes:
       - .:/app
-    restart: unless-stopped 
+    restart: unless-stopped
     networks:
-      - nginx-proxy-manager_default
+      - npm_networks
 
 networks:
-  nginx-proxy-manager_default:
-    external: true
+  npm_networks:
