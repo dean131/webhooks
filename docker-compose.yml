@@ -4,9 +4,11 @@ services:
     build: .
     volumes:
       - .:/app
+      - /app/node_modules
     restart: unless-stopped
     networks:
       - npm_networks
 
 networks:
   npm_networks:
+    external: true
